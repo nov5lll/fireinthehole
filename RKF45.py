@@ -5,13 +5,11 @@ def odeRKF(f, r0, t0, n, h, alpha, k, tol):
 
 	N_eq = len(r0)
 
-	r = np.zeros([n, N_eq], dtype = np.float32)
+	r = np.zeros([n, N_eq], dtype = np.float64)
 
-	t = np.zeros(n, dtype = np.float32)
+	t = np.zeros(n, dtype = np.float64)
 	
 	r[0]  = r0
-
-	r[1] = r0
 
 	t[0]  = t0
 
@@ -37,7 +35,7 @@ def odeRKF(f, r0, t0, n, h, alpha, k, tol):
 
 	a42 = -1/5
 
-	q = np.zeros(n, dtype = np.float32)
+	q = np.zeros(n, dtype = np.float64)
 
 	for n in range(0, n-1):
 
@@ -67,7 +65,7 @@ def odeRKF(f, r0, t0, n, h, alpha, k, tol):
 
 			#q = min(alpha*((tol*h)/(abs(y4-y5))**(1/k)))
 
-			#print(q)
+			print(q)
 
 			if(q >= 1):
 
